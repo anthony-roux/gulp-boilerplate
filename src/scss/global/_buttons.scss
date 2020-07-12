@@ -1,0 +1,19 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+}
+
+h1 {
+  color: $dark;
+  font-size: 60px;
+  font-family: $montserrat;
+}
+
+img {
+  width: 30vw;
+}
