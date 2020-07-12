@@ -1,0 +1,43 @@
+{
+  "name": "gulp-boilerplate_v2",
+  "version": "1.0.0",
+  "description": "Gulp Boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anthony-roux/gulp-boilerplate.git"
+  },
+  "keywords": [
+    "Gulp",
+    "SASS",
+    "SCSS"
+  ],
+  "author": "Anthony Roux",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anthony-roux/gulp-boilerplate/issues"
+  },
+  "homepage": "https://github.com/anthony-roux/gulp-boilerplate#readme",
+  "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "browser-sync": "^2.26.7",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect-php": "^1.0.3",
+    "gulp-image": "^6.2.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2"
+  },
+  "dependencies": {
+    "gulp-pleeease": "^2.0.2"
+  }
+}
