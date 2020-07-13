@@ -12,6 +12,7 @@ const image = require("gulp-image");
 const sourceMaps = require("gulp-sourcemaps");
 
 
+
 //---------| SCSS to CSS + minified, concatenated |-------------//
 
 gulp.task("css", function () {
@@ -51,7 +52,7 @@ gulp.task("js", function () {
 
 gulp.task("img", function () {
   return gulp
-    .src("src/assets/img/*.{png, jpeg, jpg, gif, svg}")
+    .src("src/assets/img/*")
     .pipe(image())
     .pipe(gulp.dest("dist/assets/img"));
 });
@@ -59,7 +60,7 @@ gulp.task("img", function () {
 
 //---------------| Clean dist's files |---------------//
 gulp.task("clean", function () {
-  return del("dist/**/*.css"), del("dist/**/*.js");
+  return del("dist/**/*.css"), del("dist/**/*.js"), del("dist/assets/img/*");
 });
 
 
@@ -89,7 +90,23 @@ gulp.task("default", function () {
       console.log(event + " a été modifié");
       browserSync.reload();
     });
-  gulp.watch("src/assets/img/*.{png, jpeg, jpg, gif, svg}", gulp.series("img"));
+  gulp.watch("src/assets/img/*", gulp.series("img"));
   gulp.watch("src/scss/**/*.scss", gulp.series("css"));
   gulp.watch("src/js/**/*.js", gulp.series("js"));
 });
+
+
+
+
+
+// gulp.task('watch', function () {
+//   gulp
+//     .watch("**/*.{html, php}")
+//     .on("change", function (event) {
+//       console.log(event + " a été modifié");
+//       browserSync.reload();
+//     });
+//   gulp.watch("src/assets/img/*.{png, jpeg, jpg, gif, svg}",
+//       gulp.series("img")), gulp.watch("src/scss/**/*.scss", gulp.series("css")),
+//     gulp.watch("src/js/**/*.js", gulp.series("js"))
+// })
