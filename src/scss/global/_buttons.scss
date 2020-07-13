@@ -15,5 +15,7 @@ h1 {
 }
 
 img {
-  width: 30vw;
+  width: 10vw;
+  max-width: 500px;
+  object-fit: cover;
 }
