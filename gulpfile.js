@@ -11,11 +11,28 @@ const del = require("del");
 const image = require("gulp-image");
 const sourceMaps = require("gulp-sourcemaps");
 
+//---------------| BrowserSync init |---------------//
 
+function browserSyncInit(done) {
+  browserSync.init({
+    server: {
+      baseDir: "./", //from dist folder
+    },
+    port: 3000
+  });
+  done();
+}
+
+//---------------| BrowserSync Reload |---------------//
+
+function browserSyncReload(done) {
+  browserSync.reload();
+  done();
+}
 
 //---------| SCSS to CSS + minified, concatenated |-------------//
 
-gulp.task("css", function () {
+function css() {
   return gulp
     .src("src/scss/styles.scss")
     .pipe(sourceMaps.init())
@@ -23,14 +40,15 @@ gulp.task("css", function () {
     .pipe(pleeease())
     .pipe(sourceMaps.write("."))
     .pipe(gulp.dest("dist/css"))
-    .pipe(browserSync.reload({
+    .pipe(browserSync.stream({
       stream: true
     }))
-});
+};
+
 
 //------------| JS concatenated, minified + run to ES5 |------------//
 
-gulp.task("js", function () {
+function js() {
   return gulp
     .src("src/js/**/*.js")
     .pipe(sourceMaps.init())
@@ -43,70 +61,54 @@ gulp.task("js", function () {
     .pipe(uglify())
     .pipe(sourceMaps.write("."))
     .pipe(gulp.dest("dist/js"))
-    .pipe(browserSync.reload({
+    .pipe(browserSync.stream({
       stream: true
     }))
-});
+};
+
 
 //---------------| Compress lightly images |---------------//
 
-gulp.task("img", function () {
+function img() {
   return gulp
     .src("src/assets/img/*")
     .pipe(image())
     .pipe(gulp.dest("dist/assets/img"));
-});
+};
 
 
 //---------------| Clean dist's files |---------------//
-gulp.task("clean", function () {
+function clean() {
   return del("dist/**/*.css"), del("dist/**/*.js"), del("dist/assets/img/*");
-});
+};
+
+
+
+
+
+function watch() {
+  gulp.watch("src/scss/**/*.scss", css);
+  gulp.watch("src/js/**/*.js", gulp.series("js"));
+  gulp.watch("**/*.{html, php}", gulp.series(browserSyncReload)).on("change", function (event) {
+    console.log(event + " a été modifié")
+  });
+  gulp.watch("src/assets/img/*", img);
+}
 
 
 
 //---------------| GLOBAL TASK |---------------//
 
+const javaScript = gulp.series(js);
+const build = gulp.series(clean, gulp.parallel(css, img, js));
+const watchFiles = gulp.parallel(watch, browserSyncInit);
+
+exports.css = css;
+exports.js = javaScript;
+exports.img = img;
+exports.clean = clean;
+exports.build = build;
+exports.watch = watchFiles;
+exports.default = build;
+
 // run html, scss, js, img, server, and WATCH ! 
-
-gulp.task("default", function () {
-  phpConnect.server({
-      port: 8000,
-      keepalive: true,
-      base: ".",
-    },
-    function () {
-      browserSync.init({
-        server: {
-          baseDir: "./", //from dist folder
-        },
-      });
-    }
-  );
-
-  gulp
-    .watch("**/*.{html, php}")
-    .on("change", function (event) {
-      console.log(event + " a été modifié");
-      browserSync.reload();
-    });
-  gulp.watch("src/assets/img/*", gulp.series("img"));
-  gulp.watch("src/scss/**/*.scss", gulp.series("css"));
-  gulp.watch("src/js/**/*.js", gulp.series("js"));
-});
-
-
-
-
-
-// gulp.task('watch', function () {
-//   gulp
-//     .watch("**/*.{html, php}")
-//     .on("change", function (event) {
-//       console.log(event + " a été modifié");
-//       browserSync.reload();
-//     });
-//   gulp.watch("src/assets/img/*.{png, jpeg, jpg, gif, svg}",
-//       gulp.series("img")), gulp.watch("src/scss/**/*.scss", gulp.series("css")),
-//     gulp.watch("src/js/**/*.js", gulp.series("js"))
-// })
