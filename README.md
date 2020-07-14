@@ -9,7 +9,7 @@ Install Gulp globaly in your computer : `npm i gulp -g` or `sudo npm i gulp -g` 
 
 Run `npm install`
 
-## commands line
+## Command line
 
 run `gulp --tasks` for know all the tasks possibilities...
 
