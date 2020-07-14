@@ -4,7 +4,10 @@
   "description": "Gulp Boilerplate",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "gulp clean",
+    "watch": "gulp watch",
+    "build": "gulp build",
+    "prod": "gulp default"
   },
   "repository": {
     "type": "git",
@@ -13,7 +16,10 @@
   "keywords": [
     "Gulp",
     "SASS",
-    "SCSS"
+    "SCSS",
+    "Babel",
+    "JavaScript",
+    "npm"
   ],
   "author": "Anthony Roux",
   "license": "ISC",
