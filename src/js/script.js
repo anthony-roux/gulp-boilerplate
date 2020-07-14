@@ -10,4 +10,5 @@ function toggle(elemID) {
 
 console.log("coucou");
 console.log("crotte");
-console.log("doja");
+console.log("Doctolib");
+console.log("RIP Naya Rivera <3");

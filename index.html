@@ -1,20 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/dist/css/styles.css" />
-    <title>Gulp boilerplate</title>
-  </head>
 
-  <body>
-    <h1>Hello Gulp !!!</h1>
-    <img src="dist/assets/img/black-kitten.jpg" alt="pas là" />
-    <img src="dist/assets/img/black-kitten1.jpg" alt="pas là" />
-    <img src="dist/assets/img/black-kitten3.jpg" alt="pas là" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/dist/css/styles.css" />
+  <title>Gulp boilerplate</title>
+</head>
+
+<body>
+  <h1>Hello Gulp !!!</h1>
+
+
+
+  <h2>original pictures from src : not compressed ! </h2>
+
+  <div class=compression-example>
     <img src="src/assets/img/black-kitten.jpg" alt="pas là" />
+    <code>Before compression</code>
+  </div>
+  <div class=compression-example>
     <img src="src/assets/img/black-kitten1.jpg" alt="pas là" />
+    <code>Before compression</code>
+  </div>
+  <div class=compression-example>
     <img src="src/assets/img/black-kitten3.jpg" alt="pas là" />
-  </body>
-  <script src="/dist/js/all.min.js"></script>
+    <code>Before compression</code>
+  </div>
+  <div class=compression-example>
+    <img src="src/assets/img/thumb_IMG_0112_1024.jpg" alt="pas là" />
+    <code>Before compression</code>
+  </div>
+
+
+  <h2>compressed pictures from dist folder : average compression -60% !
+  </h2>
+  <div class=compression-example>
+    <img src="dist/assets/img/black-kitten.jpg" alt="pas là" />
+    <code>[15:05:35] ✔ black-kitten.jpg -> before=29.87 KB after=26.81 KB reduced=3.06 KB(10.2%)</code>
+  </div>
+  <div class=compression-example>
+    <img src="dist/assets/img/black-kitten1.jpg" alt="pas là" />
+    <code>[15:05:35] ✔ black-kitten1.jpg -> before=39.82 KB after=36.08 KB reduced=3.74 KB(9.4%)</code>
+  </div>
+  <div class=compression-example>
+    <img src="dist/assets/img/black-kitten3.jpg" alt="pas là" />
+    <code>[15:05:35] - black-kitten3.jpg -> Cannot improve upon 17.18 KB</code>
+  </div>
+  <div class=compression-example>
+    <img src="dist/assets/img/thumb_IMG_0112_1024.jpg" alt="pas là" />
+    <code>[15:05:35] ✔ thumb_IMG_0112_1024.jpg -> before=174.78 KB after=61.4 KB reduced=113.38 KB(64.9%)</code>
+  </div>
+</body>
+<script src="/dist/js/all.min.js"></script>
+
 </html>

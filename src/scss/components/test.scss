@@ -1,12 +1,29 @@
-section {
-  background-color: $dark;
-}
-
-main {
-  color: #0000;
-  display: flex;
+body {
+  color: $dark;
+  font-family: $montserrat;
 }
 
 h1 {
-  color:$blue;
+  font-size: 100px;
+  font-weight: 900;
+  text-align: center;
+  margin: 100px auto;
+}
+
+h2 {
+  margin: 32px auto;
+  text-align: center;
+}
+
+.compression-example {
+  margin: 125px auto;
+  background-color: $blue;
+  width: 80vw;
+  height: 100px;
+  box-shadow: $blue 2px 2px 23px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 }

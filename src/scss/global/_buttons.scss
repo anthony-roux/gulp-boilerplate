@@ -8,14 +8,13 @@ body {
   background-color: white;
 }
 
-h1 {
-  color: $dark;
-  font-size: 60px;
-  font-family: $montserrat;
-}
 
 img {
-  width: 10vw;
+  width: 13vw;
+  height: 30vh;
   max-width: 500px;
   object-fit: cover;
+  flex-wrap: wrap;
+  margin: 16px;
+  border-radius: 3px;
 }
