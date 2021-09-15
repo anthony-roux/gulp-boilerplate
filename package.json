@@ -1,13 +1,11 @@
 {
-  "name": "gulp-boilerplate_v2",
-  "version": "1.0.0",
-  "description": "Gulp Boilerplate",
+  "name": "gulp-boilerplate_v3",
+  "version": "3.0.0",
+  "description": " ",
   "main": "index.js",
   "scripts": {
-    "clean": "gulp clean",
     "watch": "gulp watch",
-    "build": "gulp build",
-    "prod": "gulp default"
+    "build": "gulp build"
   },
   "repository": {
     "type": "git",
@@ -46,6 +44,8 @@
   "dependencies": {
     "cryptiles": "^4.1.3",
     "deep-extend": "^0.6.0",
+    "fs": "0.0.1-security",
+    "gulp-header": "^2.0.9",
     "gulp-pleeease": "^2.0.2",
     "hoek": "^6.1.3",
     "lodash.template": "^4.5.0"

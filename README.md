@@ -13,9 +13,13 @@ Run `npm install`
 
 run `gulp --tasks` for know all the tasks possibilities...
 
-## Development mode
+## Watch mode
 
-run `gulp default`
+run `gulp watch`
+
+## Build mode
+
+run `gulp build`
 
 You need to serve the `dist` folder.
 
