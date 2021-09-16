@@ -1,0 +1,21 @@
+//************************* MIXINS *************************//
+
+@mixin flexbox($direction: row, $justify: center, $align: center) {
+	display: flex;
+	flex-direction: $direction;
+	align-items: $align;
+	justify-content: $justify;
+}
+
+
+
+@mixin scale-animation {
+	transition: all 0.2s ease-in;
+
+	&:hover {
+		-webkit-transform: scale(1.02);
+		transform: scale(1.02);
+	}
+}
+
+

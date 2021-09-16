@@ -3,17 +3,11 @@
 @import 'global/_reset.scss';
 @import 'global/_variables.scss';
 @import 'global/_fonts.scss';
+@import 'global/_mixins';
+@import 'global/_breakpoints';
 @import 'global/_buttons.scss';
 @import 'global/_icons.scss';
 @import 'global/_utilities.scss';
 
 @import 'components/test.scss';
 
-// h1 {
-//   font-size: 1000px !important;
-//   color: blue;
-// }
-
-// .compression-example {
-
-// }

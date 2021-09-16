@@ -52,3 +52,8 @@ You need to serve the `dist` folder.
 - Compress PNG, JPG, GIF, SVG images
 - Refresh the browser automatically each time a file is modified
 - locates the name of the source files in the browser inspector.
+
+
+Start Test Technique : 
+15-09 : 22h-23h
+16-09 : 22h-23h

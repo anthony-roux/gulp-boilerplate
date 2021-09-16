@@ -1,0 +1,70 @@
+
+//************************* BREAKPOINTS *************************//
+
+$phone-up: 480px;
+$tablet-up: 768px;
+$tablet-down: 767px;
+$desktop-down: 1087px;
+$desktop-up: 1088px;
+$desktop-down-1199: 1199px;
+$desktop-up-1200: 1200px;
+$desktop-up-1366: 1366px;
+$desktop-up-1448: 1448px;
+
+
+//************************* MEDIA QUERIES *************************//
+
+
+@mixin phone-up {
+  @media (min-width: $phone-up) {
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  @media (min-width: $tablet-up) {
+    @content;
+  }
+}
+
+@mixin tablet-down {
+  @media (max-width: $tablet-down) {
+    @content;
+  }
+}
+
+@mixin desktop-down {
+  @media (max-width: $desktop-down) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media (min-width: $desktop-up) {
+    @content;
+  }
+}
+
+@mixin desktop-down-1199 {
+  @media (max-width: $desktop-down-11999) {
+    @content;
+  }
+}
+
+@mixin desktop-up-1200 {
+  @media (min-width: $desktop-up-1200) {
+    @content;
+  }
+}
+
+@mixin desktop-up-1366 {
+  @media (min-width: $desktop-up-1366) {
+    @content;
+  }
+}
+@mixin desktop-up-1448 {
+  @media (min-width: $desktop-up-1448) {
+    @content;
+  }
+}
+
